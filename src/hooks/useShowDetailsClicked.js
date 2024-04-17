@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 
-function useShowDetailsClicked() {
+function useShowDetailsClicked(elementRef) {
   const [showDetailsClicked, setShowDetailsClicked] = useState(false);
 
   useEffect(() => {
     const buttonClickHandler = (event) => {
-      const target = event.target;
-      if (target.classList.contains("show-details-button")) {
+      if (event.target.classList.contains("show-details-button")) {
         setShowDetailsClicked((prevState) => !prevState);
       }
     };
 
-    const searchHistory = document.querySelector(".search-history");
-    if (!searchHistory) return;
+    if (!elementRef || !elementRef.current) return;
 
-    searchHistory.addEventListener("click", buttonClickHandler);
+    const element = elementRef.current;
+    element.addEventListener("click", buttonClickHandler);
 
     return () => {
-      searchHistory.removeEventListener("click", buttonClickHandler);
+      element.removeEventListener("click", buttonClickHandler);
     };
-  }, []);
+  }, [elementRef]);
 
   return showDetailsClicked;
 }

@@ -4,13 +4,16 @@ import {
   validatePostcode,
   fetchPostcodeData,
 } from "../../services/PostcodeService";
-import useShowDetailsClicked from "../../hooks/useShowDetailsClicked";
 
-const PostcodeFormContainer = ({ onSubmit, clearDetails }) => {
+const PostcodeFormContainer = ({
+  onSubmit,
+  clearDetails,
+  showDetailsClicked,
+}) => {
   const [postcode, setPostcode] = useState("");
   const [error, setError] = useState("");
-  const showDetailsClicked = useShowDetailsClicked();
 
+  // click on "View" in history should clear the form
   useEffect(() => {
     const resetFormData = () => {
       setPostcode("");

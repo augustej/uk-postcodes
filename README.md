@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# React Postcode Lookup App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a basic ReactJS application that allows users to submit a UK postcode, retrieves information about the postcode using the postcodes.io API, and displays relevant details to the user. Additionally, it keeps track of the history of postcodes the user has submitted, allowing them to view details and remove entries from the history list.
 
-## Available Scripts
+## [Live site](https://augustej.github.io/uk-postcodes)
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+![Desktop screenshot](public/screenshots/desktop-scr.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div style="display: flex; gap: 20px">
+<img src="public/screenshots/mobile-scr.png" alt="Mobile screenshot" style="max-width: 300px;">
+<img src="public/screenshots/mobile-error-scr.png" alt="Mobile screenshot with error" style="max-width: 300px;">
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Users can submit a UK postcode and view country, longitude, latitude, and admin district information.
+- History of submitted postcodes is displayed, with the ability to select and view details.
+- Postcodes can be removed from the history list
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone this repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/augustej/uk-postcodes.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   cd uk-postcodes
+   ```
 
-### `npm run eject`
+3. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm start
+   ```
 
-## Learn More
+2. Open your browser and navigate to `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Enter a UK postcode in the input field and submit.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. View postcode details and history.
 
-### Code Splitting
+## Possible improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Data does not persist on page reload - localStorage could be used.
+- Styling is basic and made only with bootstrap - page look could be enhanced.
 
-### Analyzing the Bundle Size
+## Development process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Project Setup**: Initialized the project using `create-react-app`.
 
-### Making a Progressive Web App
+2. **Core Features Development Order**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   - **Input Form**: Developed the input form component.
+   - **API Integration**: Integrated the postcodes.io API service using Fetch.
+   - **History Implementation**: Added functionality to track user-submitted postcodes.
 
-### Advanced Configuration
+3. **Styling with Bootstrap**: Applied Bootstrap for responsive design and visual enhancements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **Tests Addition**: Implemented unit and integration tests to ensure application reliability and correctness.
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[augustej](https://augustej.github.io/)

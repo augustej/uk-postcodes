@@ -20,6 +20,7 @@ const PostcodesHistory = ({
                   className={`d-flex justify-content-between align-items-center list-group-item ${
                     active ? "list-group-item-dark" : ""
                   }`}
+                  data-testid={`${active ? "isActive" : ""}`}
                   aria-current={active}
                 >
                   <p className="mt-0 mb-0 me-4">{postcode}</p>

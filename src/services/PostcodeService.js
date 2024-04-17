@@ -1,4 +1,5 @@
-const BASE_URL = "https://api.postcodes.io/postcodes"; // move to configs
+import { BASE_URL } from "../configs";
+
 const CONNECTION_ERROR = "Problem connecting to external service";
 
 const fetchPostcodeData = async (postcode) => {

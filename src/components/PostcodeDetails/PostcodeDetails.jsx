@@ -1,7 +1,7 @@
 const PostcodeDetails = ({ details }) => {
   return (
     details && (
-      <div className="card details-card">
+      <div className="card details-card" data-testid="postcode-details">
         <div className="card-header">{details.postcode}</div>
         <div className="card-body">
           <ul className="list-group list-group-flush">
