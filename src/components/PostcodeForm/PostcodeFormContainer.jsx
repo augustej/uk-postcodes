@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PostcodeForm from "./PostcodeForm";
 import {
   validatePostcode,
   fetchPostcodeData,
 } from "../../services/PostcodeService";
+import useShowDetailsClicked from "../../hooks/useShowDetailsClicked";
 
-const PostcodeFormContainer = ({ onSubmit }) => {
+const PostcodeFormContainer = ({ onSubmit, clearDetails }) => {
   const [postcode, setPostcode] = useState("");
   const [error, setError] = useState("");
+  const showDetailsClicked = useShowDetailsClicked();
+
+  useEffect(() => {
+    const resetFormData = () => {
+      setPostcode("");
+      setError("");
+    };
+
+    resetFormData();
+  }, [showDetailsClicked]);
 
   const handleInputChange = (e) => {
     setPostcode(e.target.value);
@@ -23,6 +34,8 @@ const PostcodeFormContainer = ({ onSubmit }) => {
       setPostcode("");
       return;
     }
+
+    clearDetails();
   };
 
   const postcodeIsValid = async (postcode) => {
@@ -45,6 +58,7 @@ const PostcodeFormContainer = ({ onSubmit }) => {
         longitude,
         latitude,
         admin_district: codes.admin_district,
+        postcode,
       };
     } catch (error) {
       setError(`Postcode error: ${error.message}`);

@@ -1,18 +1,18 @@
 import "./App.css";
 import { useState, useCallback } from "react";
 import PostcodeFormContainer from "./components/PostcodeForm/PostcodeFormContainer";
-import PostcodeDetails from "./components/PostcodeDetails/PostcodeDetails";
-import PostcodesHistory from "./components/PostcodesHistory/PostcodesHistory";
+import PostcodeDetails from "./components/PostcodeDetails";
+import PostcodesHistoryContainer from "./components/PostcodesHistory/PostcodesHistoryContainer";
 
 function App() {
   const [details, setDetails] = useState(null);
   const [history, setHistory] = useState([]);
 
   const handleSubmit = useCallback(
-    (newResult, postcode) => {
+    (newResult) => {
       setDetails(newResult);
-      if (!history.find((entry) => entry.postcode === postcode)) {
-        setHistory([...history, { postcode, details: newResult }]);
+      if (!history.find((entry) => entry.postcode === newResult.postcode)) {
+        setHistory([...history, newResult]);
       }
     },
     [history]
@@ -22,7 +22,7 @@ function App() {
     (postcode) => {
       const selected = history.find((entry) => entry.postcode === postcode);
       if (selected) {
-        setDetails(selected.details);
+        setDetails(selected);
       }
     },
     [history]
@@ -35,15 +35,28 @@ function App() {
     [history]
   );
 
+  const handleClearDetails = useCallback(() => {
+    setDetails(null);
+  }, []);
+
   return (
     <>
-      <PostcodeFormContainer onSubmit={handleSubmit} />
-      <PostcodeDetails details={details} />
-      <PostcodesHistory
-        postcodes={history.map((entry) => entry.postcode)}
-        showDetails={handleHistoryClick}
-        deleteFromHistory={handleDeleteFromHistory}
-      />
+      <h1>Postcode Finder</h1>
+      <div className="postcode-layout">
+        <div>
+          <PostcodeFormContainer
+            onSubmit={handleSubmit}
+            clearDetails={handleClearDetails}
+          />
+          <PostcodeDetails details={details} />
+        </div>
+        <PostcodesHistoryContainer
+          postcodes={history.map((entry) => entry.postcode)}
+          showDetails={handleHistoryClick}
+          deleteFromHistory={handleDeleteFromHistory}
+          activePostcode={details?.postcode}
+        />
+      </div>
     </>
   );
 }
