@@ -7,11 +7,15 @@ This project is a basic ReactJS application that allows users to submit a UK pos
 ## Screenshots
 
 ![Desktop screenshot](public/screenshots/desktop-scr.png)
+_Desktop view_
 
 <div style="display: flex; gap: 20px;">
-<img src="public/screenshots/mobile-scr.png" alt="Mobile screenshot" width="200">
-<img src="public/screenshots/mobile-error-scr.png" alt="Mobile screenshot with error" width="200">
+   <img src="public/screenshots/mobile-scr.png" alt="Mobile screenshot" width="300">
+   <img src="public/screenshots/mobile-error-scr.png" alt="Mobile screenshot with error" width="300">
 </div>
+
+_Mobile view_
+
 ## Features
 
 - Users can submit a UK postcode and view country, longitude, latitude, and admin district information.
