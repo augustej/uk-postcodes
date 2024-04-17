@@ -2,15 +2,15 @@
 
 This project is a basic ReactJS application that allows users to submit a UK postcode, retrieves information about the postcode using the postcodes.io API, and displays relevant details to the user. Additionally, it keeps track of the history of postcodes the user has submitted, allowing them to view details and remove entries from the history list.
 
-## [Live site](https://augustej.github.io/uk-postcodes)
+## [See Live site here](https://augustej.github.io/uk-postcodes)
 
 ## Screenshots
 
 ![Desktop screenshot](public/screenshots/desktop-scr.png)
 
 <div style="display: flex; gap: 20px">
-<img src="public/screenshots/mobile-scr.png" alt="Mobile screenshot" style="max-width: 300px;">
-<img src="public/screenshots/mobile-error-scr.png" alt="Mobile screenshot with error" style="max-width: 300px;">
+<img src="public/screenshots/mobile-scr.png" alt="Mobile screenshot" style="max-width: 100px;">
+<img src="public/screenshots/mobile-error-scr.png" alt="Mobile screenshot with error" style="max-width: 100px;">
 </div>
 
 ## Features
