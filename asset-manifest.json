@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/uk-postcodes/static/css/main.a579b276.css",
+    "main.js": "/uk-postcodes/static/js/main.fefc489b.js",
+    "static/js/453.d0abbb1d.chunk.js": "/uk-postcodes/static/js/453.d0abbb1d.chunk.js",
+    "index.html": "/uk-postcodes/index.html",
+    "main.a579b276.css.map": "/uk-postcodes/static/css/main.a579b276.css.map",
+    "main.fefc489b.js.map": "/uk-postcodes/static/js/main.fefc489b.js.map",
+    "453.d0abbb1d.chunk.js.map": "/uk-postcodes/static/js/453.d0abbb1d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a579b276.css",
+    "static/js/main.fefc489b.js"
+  ]
+}
